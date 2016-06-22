@@ -13,18 +13,32 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
+  var refreshControl: UIRefreshControl!
   var dataList: [Post] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    // Init table view
     tableView.delegate = self
     tableView.dataSource = self
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 88.0
     
+    // Init refresh control
+    refreshControl = UIRefreshControl()
+    refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: .ValueChanged)
+    tableView.addSubview(refreshControl)
+    
+    // Load data at the first tiem
+    refresh()
+  }
+  
+  func refresh() {
     Service.sharedInstance.getPosts { (data) in
+      self.refreshControl.endRefreshing()
       self.dataList = data
       self.tableView.reloadData()
     }
@@ -62,6 +76,10 @@ extension ViewController: UITableViewDataSource {
     
     if let textLabel = cell.viewWithTag(300) as? UILabel {
       textLabel.text = dataList[indexPath.row].postText
+    }
+    
+    if let timeLabel = cell.viewWithTag(400) as? UILabel {
+      timeLabel.text = dataList[indexPath.row].createdAt.timeAgoSince()
     }
     
     return cell

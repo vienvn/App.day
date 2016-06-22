@@ -22,9 +22,8 @@ class Service {
       switch response.result {
       case .Success(let data):
         let json = JSON(data)
-        let upcomings = json["data"].array
         
-        for obj in upcomings! {
+        for obj in json["data"].array! {
           list.append(Post(json: obj))
         }
         action(data: list)
