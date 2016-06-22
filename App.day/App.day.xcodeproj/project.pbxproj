@@ -65,6 +65,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6A4299601D1A69DA00F3A6C3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B68531D1A3EEE000F0943 /* Service.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		6A4299611D1A69E500F3A6C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A42995A1D1A408500F3A6C3 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6A4299621D1A69F900F3A6C3 /* ViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				6A42995C1D1A42BD00F3A6C3 /* PostTableViewCell.swift */,
+				6A7B68431D1A3C8F000F0943 /* ViewController.swift */,
+			);
+			name = ViewControler;
+			sourceTree = "<group>";
+		};
+		6A4299631D1A6A0C00F3A6C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A42995E1D1A57F800F3A6C3 /* DateExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		6A4299641D1A6A2200F3A6C3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B684D1D1A3C8F000F0943 /* Info.plist */,
+				6A7B68481D1A3C8F000F0943 /* Assets.xcassets */,
+				6A7B68451D1A3C8F000F0943 /* Main.storyboard */,
+				6A7B684A1D1A3C8F000F0943 /* LaunchScreen.storyboard */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		6A7B68351D1A3C8E000F0943 = {
 			isa = PBXGroup;
 			children = (
@@ -86,16 +130,12 @@
 		6A7B68401D1A3C8E000F0943 /* App.day */ = {
 			isa = PBXGroup;
 			children = (
+				6A4299641D1A6A2200F3A6C3 /* Resource */,
+				6A4299631D1A6A0C00F3A6C3 /* Extension */,
+				6A4299621D1A69F900F3A6C3 /* ViewControler */,
+				6A4299611D1A69E500F3A6C3 /* Model */,
+				6A4299601D1A69DA00F3A6C3 /* Service */,
 				6A7B68411D1A3C8F000F0943 /* AppDelegate.swift */,
-				6A7B68431D1A3C8F000F0943 /* ViewController.swift */,
-				6A7B68451D1A3C8F000F0943 /* Main.storyboard */,
-				6A7B68481D1A3C8F000F0943 /* Assets.xcassets */,
-				6A7B684A1D1A3C8F000F0943 /* LaunchScreen.storyboard */,
-				6A7B684D1D1A3C8F000F0943 /* Info.plist */,
-				6A7B68531D1A3EEE000F0943 /* Service.swift */,
-				6A42995A1D1A408500F3A6C3 /* Post.swift */,
-				6A42995C1D1A42BD00F3A6C3 /* PostTableViewCell.swift */,
-				6A42995E1D1A57F800F3A6C3 /* DateExtension.swift */,
 			);
 			path = App.day;
 			sourceTree = "<group>";
